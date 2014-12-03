@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Search Results
+	</title>
+</head>
+<body>
+	<h1>This is my search result page!!!</h1>
+	<h2>Results Page</h2>
+		<div> 
+			<% for (var i = 0; i <Search.length; i++) { %>
+				<li><a href="/show/<%= Search[i].imdbID %>"><%= Search[i].Title %></a></li>
+				<li><%= Search[i].imdbID %></li>
+		 <%	} %>
+</body>
+</html>
+
+
