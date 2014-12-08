@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var request = require('request');
+var db = require('./models/index.js');
 
 
 app.set("view engine", "ejs");
@@ -29,7 +30,7 @@ app.get("/search", function (req, res) {
 	})
 
 
-})
+});
 
 app.get("/show/:id", function (req, res) {
 	var imdbid = req.params.id;
@@ -42,6 +43,25 @@ app.get("/show/:id", function (req, res) {
 	})
 
 
-})
+});
+app.post("/added", function (req, res) {
+	//var dbAdd = req.body;
+	db.Movie.create(req.body).done(function (err, data) {
+		if(err) throw err;
+
+			console.log(data.values);
+			res.render("added", req.body);
+
+		
+	})
+});
+
+app.get("/watch_list", function (req, res) {
+	db.Movie.findAll().done( function (error, data) {
+
+		// res.send(data);
+		res.render("watch_list", {'Movie':data});
+	}) 
+});
 
 app.listen(3000);

@@ -2,19 +2,46 @@
 <html>
 <head>
 	<title>
-	My Movie App
+		My Movie App
 	</title>
+	<style>
+		body {
+			background-color: rgba(100, 90, 175, 0.6);
+		}
+		h1 {
+			font-family: Arial;
+			font-size: 35px;
+			text-align: center;
+			color: rgba(200, 50, 145, 0.7);
+		}
+		div.form {
+			position: absolute;
+			left: 60%;
+			text-align: center;
+			width: 250px;
+
+		}
+		#box {
+			padding: 7px;
+			width: 250px;
+			font-size: 15px;
+		}
+	</style>
 </head>
 <body>
-	<h1>Submit MOVIES here!!!</h1>
-	<div>
+	<h1>Welcome the the Movie App. Search movies as well as add your favorite movies to your watchlist.</h1>
+	<div class="form">
 		<form action="/search" method="get">
-			<input name="title" type="text" placeholder="Title">
+			<input name="title" id="box" type="text" placeholder="Search Movie Title">
 			<br>
 			
-			<br>
-			<input type="submit" value="Submit">
-		</form>
-	</div>			
+		</br>
+		<input type="submit" class="btn" value="Search">
+	</form><br></br>
+	<form action="/watch_list"><button>Movie Watch List</button>
+	</form>
+</div>	
+<img src="http://th06.deviantart.net/fs71/PRE/i/2012/226/b/c/pulp_fiction_by_intothewild142-d5b27p3.jpg"/>
+
 </body>
 </html>

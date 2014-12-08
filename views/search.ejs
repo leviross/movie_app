@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		Search Results
-	</title>
+	<title>Search Results</title>
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+	<style>
+		body {
+			background-color: #cccc55;
+
+		}
+		#img {
+			position: absolute;
+			right: 10%;
+			top: 0%;
+		}
+		h1 {
+			font-family: 'Shadows Into Light', cursive;	
+			color: #ff0111;
+			font-size: 50px;	
+
+		}
+		li {
+			font-family: sans-serif;	
+			color: #21181B;
+			font-size: 20px;	
+		}
+	
+
+	</style>
 </head>
 <body>
 	<h1>This is my search result page!!!</h1>
-	<h2>Results Page</h2>
-		<div> 
-			<% for (var i = 0; i <Search.length; i++) { %>
-				<li><a href="/show/<%= Search[i].imdbID %>"><%= Search[i].Title %></a></li>
-				<li><%= Search[i].imdbID %></li>
-		 <%	} %>
+	
+	<div> 
+		<% for (var i = 0; i <Search.length; i++) { %>
+		<li><a href="/show/<%= Search[i].imdbID %>"><%= Search[i].Title %></a></li>
+		<li>IMDB #: <%= Search[i].imdbID %>   -   Year: <%= Search[i].Year %></li>
+		<%	} %>
+	</div>
+	<div id="img">
+		<img src="http://4.bp.blogspot.com/_XdP6Lp2ceqY/TRk3bMkka0I/AAAAAAAAjZM/V3yF2lztYS4/s1600/Breakfast-Club.png"/>
+	</div>
+	
 </body>
 </html>
-
 

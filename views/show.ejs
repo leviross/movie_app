@@ -2,25 +2,59 @@
 <html>
 <head>
 	<title></title>
-<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 
 	<style>
-	div h1{
-		font-size: 50px;
-		color: #ff0111;
-		font-family: 'Shadows Into Light', cursive;		}
-		
+		div h1{
+			font-size: 50px;
+			color: #ff0111;
+			font-family: 'Shadows Into Light', cursive;		
+		}
+		div h2{
+			font-size: 30px;
+			color: #ff2222;
+			font-family: open sans;		
+		}
+		body {
+			background-color: rgba(75, 100, 190, 0.3);
+
+		}
 	</style>
+	
 
 
 </head>
 <body>
 	<div>
 		<h1> <%= Title %> </h1>
+		<h2> IMDB ID : <%= imdbID %> </h2>
+		
 		<div></div>
 		<img src="<%= Poster %>">
 
-</div>
+	</div>
+	<div class="form">
+		<form action="/search" method="get">
+			<input name="title" id="box" type="text" placeholder="Search Movie Title">
+			<br>
+			
+		</br>
+		<input type="submit" class="btn" value="Search">
+	</form><br></br>
+	<form action="/">
+		<button>Home Page</button>
+		<br></br>
+	</form>
+	<form method="post" action="/added">
+		<button>Add this to Watch List</button>
+		<input type="hidden" name="title" value="<%= Title %>">
+		<input type="hidden" name="imdb" value="<%= imdbID %>">
+		<input type="hidden" name="year" value="<%= Year %>">
+	</form><br></br>
+	<form action="/watch_list">
+		<button>Movie Watch List</button>
+	</form>
+</div>	
 
 </body>
 </html>

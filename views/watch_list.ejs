@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Watch List</title>
+	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<style>
+		body {
+			background-color: #AECDCF;
+		}
+		h1 {
+			font-family: 'Rock Salt', cursive;		
+			color: #732F46;
+			font-size: 45px;
+		}
+		div {
+			font-family: sans-serif;
+			font-size: 18px;
+
+		}
+		li {
+			font-family: 'Inconsolata', ;
+			font-size: 20px;
+		}
+		img {
+			position: absolute;
+			right: 10%;
+			border-radius: 50px;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<h1>Here are your favorite movies!</h1>
+	<div> 
+		<% for (var i = 0; i < Movie.length; i++) { %> 
+		<li><a href="/show/<%= Movie[i].imdb %>"><%= Movie[i].title %></a></li>
+		<% } %>
+	</div>
+	<div id="poster"><img src="http://ia.media-imdb.com/images/M/MV5BMjAxNDcyNjMzMF5BMl5BanBnXkFtZTcwMjM1NzI3Mg@@._V1_SX640_SY720_.jpg"/>
+		<form action="/search" method="get">
+			<input name="title" id="box" type="text" placeholder="Search Movie Title">
+			<br>
+			
+		</br>
+		<input type="submit" class="btn" value="Search">
+	</form><br></br>
+	<form action="/">
+		<button>Home Page</button>
+		<br></br>
+	</form>
+</div>
+
+
+
+</body>
+</html>
