@@ -4,6 +4,10 @@
 	<title>Watch List</title>
 	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="/script.js"></script>
+
+
 	<style>
 		body {
 			background-color: #AECDCF;
@@ -33,10 +37,12 @@
 <body>
 
 	<h1>Here are your favorite movies!</h1>
-	<div> 
+	<div><ul>
 		<% for (var i = 0; i < Movie.length; i++) { %> 
-		<li><a href="/show/<%= Movie[i].imdb %>"><%= Movie[i].title %></a></li>
+		<li><a href="/show/<%= Movie[i].imdb %>"><%= Movie[i].title %></a>
+		<button data-id="<%= Movie[i].id %>" class="deleteMovie">Delete</button></li>
 		<% } %>
+		</ul>
 	</div>
 	<div id="poster"><img src="http://ia.media-imdb.com/images/M/MV5BMjAxNDcyNjMzMF5BMl5BanBnXkFtZTcwMjM1NzI3Mg@@._V1_SX640_SY720_.jpg"/>
 		<form action="/search" method="get">
